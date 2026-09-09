@@ -324,7 +324,7 @@ main {
     0 0 5rem 1.5rem rgb(255 255 255 / 48%);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   body {
     overflow-x: hidden;
     overflow-y: auto;
@@ -332,85 +332,124 @@ main {
 
   main {
     min-height: 100svh;
-    padding-top: 2.25rem;
+    padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 2.5rem)
+      max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .logo {
+    font-size: clamp(1.8rem, 7vw, 2.25rem);
   }
 
   .hero-heading {
-    width: calc(100vw - 2rem);
-    max-width: 34rem;
-    margin-top: 1.25rem;
+    width: 100%;
+    max-width: 35rem;
+    margin-top: clamp(1.25rem, 4vw, 1.75rem);
     padding-inline: 0;
-    font-size: clamp(1.25rem, 5.8vw, 2.7rem);
-    line-height: 0.96;
+    font-size: clamp(1.7rem, 7.2vw, 2.5rem);
+    line-height: 1;
   }
 
   .hero-support {
-    width: min(100% - 1rem, 27rem);
-    margin-top: 0.85rem;
-    font-size: 0.72rem;
+    width: min(100%, 27rem);
+    margin-top: 1rem;
+    font-size: clamp(0.78rem, 2.4vw, 0.88rem);
+    line-height: 1.5;
   }
 
   .top-cta {
-    margin: 1.25rem auto 0;
+    margin: 1.35rem auto 0;
+    gap: 0.65rem;
   }
 
   .start-button {
-    min-height: 2.9rem;
-    padding-inline: 1.35rem;
+    min-height: 3rem;
+    padding: 0.8rem 1.4rem;
+    font-size: 1rem;
   }
 
   .site-footer {
-    padding-bottom: 2.9rem;
+    position: static;
+    margin-top: clamp(2.5rem, 8vw, 4rem);
+    padding: 0;
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 0.75rem clamp(1rem, 5vw, 1.75rem);
+    max-width: 25rem;
+    margin-inline: auto;
+    text-align: center;
   }
 
   .network-status {
-    right: 2.5rem;
-    bottom: 1rem;
+    display: none;
   }
 
   .product-stage {
     position: relative;
     inset: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    min-height: calc(100svh - 5rem);
-    padding-top: 3.5rem;
+    gap: clamp(2.25rem, 8vw, 4rem);
+    width: 100%;
+    min-height: 0;
+    padding-top: clamp(2.75rem, 9vw, 4.5rem);
   }
 
   .product {
-    min-height: 18rem;
-    transform: translateY(2.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    transform: none;
+  }
+
+  .product img {
+    max-width: 100%;
   }
 
   .product--macbook img {
-    width: min(74vw, 21rem);
+    width: min(78vw, 22rem);
+    margin-block: clamp(-2.4rem, -7vw, -1.65rem) clamp(-2.5rem, -7vw, -1.75rem);
   }
 
   .product--macmini img {
-    width: min(132vw, 42rem);
-    transform: translate(-9%, 15%);
+    width: min(100%, 34rem);
+    margin-top: clamp(-2.2rem, -6vw, -1.5rem);
+    transform: none;
   }
 
   .earning-rate {
-    font-size: 0.82rem;
+    position: relative;
+    flex: 0 0 auto;
+    font-size: clamp(0.8rem, 2.4vw, 0.92rem);
   }
 
-  .product--macbook .earning-rate {
-    top: calc(50% - min(33vw, 8.75rem));
-  }
-
+  .product--macbook .earning-rate,
   .product--macmini .earning-rate {
-    top: calc(50% - min(33vw, 8.75rem));
-    left: 48%;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
   }
 
   .glow {
-    width: min(110vw, 32rem);
-    filter: blur(2.5rem);
+    top: 50%;
+    left: 50%;
+    width: min(100vw, 34rem);
+    filter: blur(2rem);
+    transform: translate(-50%, -50%);
   }
 
   .glow--macbook {
-    width: min(108vw, 34rem);
+    width: min(96vw, 34rem);
     filter: blur(1.5rem);
     box-shadow:
       0 0 2rem 0.5rem rgb(255 255 255 / 88%),
@@ -418,12 +457,22 @@ main {
   }
 
   .glow--macmini {
-    width: min(108vw, 34rem);
-    transform: translate(1%, 2%);
+    width: min(100vw, 36rem);
+    transform: translate(-50%, -50%);
     filter: blur(1.5rem);
     box-shadow:
       0 0 2rem 0.5rem rgb(255 255 255 / 88%),
       0 0 4rem 1rem rgb(255 255 255 / 44%);
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-heading {
+    font-size: clamp(1.75rem, 7.6vw, 2rem);
+  }
+
+  .product--macmini img {
+    transform: translateX(-4%);
   }
 }
 
