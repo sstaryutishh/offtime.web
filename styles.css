@@ -468,11 +468,40 @@ main {
 
 @media (max-width: 430px) {
   .hero-heading {
-    font-size: clamp(1.75rem, 7.6vw, 2rem);
+    margin-top: 1.75rem;
+    font-size: clamp(1.9rem, 8.2vw, 2.2rem);
   }
 
   .product--macmini img {
-    transform: translateX(-4%);
+    width: 120vw;
+    max-width: none;
+    transform: translateX(-7%);
+  }
+
+  .product-stage::after {
+    display: block;
+    flex: 0 0 auto;
+    width: 100vw;
+    height: clamp(7rem, 32vw, 9rem);
+    margin-top: clamp(-1.5rem, -4vw, -1rem);
+    content: "";
+    background: linear-gradient(
+      to bottom,
+      rgb(151 205 238 / 0%) 0%,
+      rgb(151 205 238 / 58%) 28%,
+      #97cdee 52%,
+      rgb(151 205 238 / 58%) 76%,
+      rgb(151 205 238 / 0%) 100%
+    );
+    filter: blur(0.35rem);
+  }
+
+  .site-footer {
+    margin-top: 1rem;
+  }
+
+  .site-footer a {
+    color: #171714;
   }
 }
 
