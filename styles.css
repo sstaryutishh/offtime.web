@@ -274,7 +274,7 @@ main {
 
 .product--macmini .earning-rate {
   top: calc(50% - clamp(7rem, 11vw, 11rem));
-  left: calc(50% + clamp(1rem, 1.5vw, 1.5rem));
+  left: calc(50% - clamp(0.5rem, 1vw, 1rem));
   transform: translateX(-50%);
 }
 
@@ -401,7 +401,7 @@ main {
 
   .product--macmini .earning-rate {
     top: calc(50% - min(33vw, 8.75rem));
-    left: 51%;
+    left: 48%;
   }
 
   .glow {
