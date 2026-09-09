@@ -13,6 +13,7 @@ html,
 body {
   min-height: 100%;
   margin: 0;
+  overflow-x: clip;
 }
 
 body {
@@ -49,7 +50,7 @@ main {
   padding-inline: 1rem;
   font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(2rem, 3.8vw, 4rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 0.94;
   letter-spacing: -0.025em;
   text-align: center;
@@ -92,61 +93,27 @@ main {
   min-height: 3.15rem;
   padding: 0.85rem 1.55rem;
   border-radius: 999px;
-  color: #fff;
+  color: #9aefae;
   background: #171714;
   font-size: 1.1rem;
   line-height: 1;
   text-decoration: none;
-  transition:
-    transform 180ms ease,
-    color 180ms ease;
+  transition: color 180ms ease;
 }
 
 .start-button:hover {
   color: #9aefae;
-  transform: translateY(-1px);
 }
 
 .start-button span {
   display: inline-block;
   min-width: 0.75em;
   text-align: center;
-  transition: transform 180ms ease;
-}
-
-.start-button span::before {
-  content: "→";
-}
-
-.start-button:hover span::before {
-  content: "$";
-}
-
-.start-button:hover span {
-  transform: translateX(0.3rem);
 }
 
 .start-button:focus-visible {
   outline: 2px solid #171714;
   outline-offset: 0.25rem;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .start-button {
-    transition: none;
-  }
-
-  .start-button:hover {
-    transform: none;
-  }
-
-  .start-button span {
-    transition: none;
-  }
-
-  .start-button:hover span {
-    transform: none;
-  }
 }
 
 .top-cta p {
@@ -251,7 +218,7 @@ main {
 }
 
 .product--macmini img {
-  width: clamp(37rem, 62vw, 62rem);
+  width: clamp(42rem, 68vw, 68rem);
   transform: translate(-14%, 20%);
 }
 
@@ -349,6 +316,10 @@ main {
     line-height: 1;
   }
 
+  .hero-heading span {
+    white-space: normal;
+  }
+
   .hero-support {
     width: min(100%, 27rem);
     margin-top: 1rem;
@@ -411,6 +382,7 @@ main {
   }
 
   .product img {
+    flex: 0 0 auto;
     max-width: 100%;
   }
 
@@ -420,7 +392,8 @@ main {
   }
 
   .product--macmini img {
-    width: min(100%, 34rem);
+    width: min(125vw, 42rem);
+    max-width: none;
     margin-top: clamp(-2.2rem, -6vw, -1.5rem);
     transform: none;
   }
@@ -464,44 +437,12 @@ main {
       0 0 2rem 0.5rem rgb(255 255 255 / 88%),
       0 0 4rem 1rem rgb(255 255 255 / 44%);
   }
+
 }
 
 @media (max-width: 430px) {
   .hero-heading {
-    margin-top: 1.75rem;
-    font-size: clamp(1.9rem, 8.2vw, 2.2rem);
-  }
-
-  .product--macmini img {
-    width: 120vw;
-    max-width: none;
-    transform: translateX(-7%);
-  }
-
-  .product-stage::after {
-    display: block;
-    flex: 0 0 auto;
-    width: 100vw;
-    height: clamp(7rem, 32vw, 9rem);
-    margin-top: clamp(-1.5rem, -4vw, -1rem);
-    content: "";
-    background: linear-gradient(
-      to bottom,
-      rgb(151 205 238 / 0%) 0%,
-      rgb(151 205 238 / 58%) 28%,
-      #97cdee 52%,
-      rgb(151 205 238 / 58%) 76%,
-      rgb(151 205 238 / 0%) 100%
-    );
-    filter: blur(0.35rem);
-  }
-
-  .site-footer {
-    margin-top: 1rem;
-  }
-
-  .site-footer a {
-    color: #171714;
+    font-size: clamp(1.55rem, 7.6vw, 2rem);
   }
 }
 
