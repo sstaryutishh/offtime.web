@@ -124,6 +124,10 @@ main {
   white-space: nowrap;
 }
 
+.mobile-compute-link {
+  display: none;
+}
+
 .site-footer {
   position: fixed;
   z-index: 20;
@@ -325,7 +329,7 @@ main {
     max-width: 35rem;
     margin-top: clamp(1.25rem, 4vw, 1.75rem);
     padding-inline: 0;
-    font-size: clamp(1.7rem, 7.2vw, 2.5rem);
+    font-size: clamp(2rem, 8vw, 3rem);
     line-height: 1;
   }
 
@@ -343,6 +347,18 @@ main {
   .top-cta {
     margin: 1.35rem auto 0;
     gap: 0.65rem;
+  }
+
+  .mobile-compute-link {
+    display: block;
+    margin-top: 0.15rem;
+    color: #171714;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25rem;
   }
 
   .start-button {
@@ -363,7 +379,7 @@ main {
   .site-footer::before {
     position: absolute;
     z-index: -1;
-    top: -5rem;
+    top: -9rem;
     right: 0;
     bottom: 0;
     left: 0;
@@ -382,8 +398,7 @@ main {
   }
 
   .site-footer .compute-link {
-    margin-bottom: 1rem;
-    font-size: 0.78rem;
+    display: none;
   }
 
   .footer-links {
@@ -482,7 +497,7 @@ main {
 
 @media (max-width: 430px) {
   .hero-heading {
-    font-size: clamp(1.55rem, 7.6vw, 2rem);
+    font-size: clamp(1.9rem, 9vw, 2.35rem);
   }
 }
 
