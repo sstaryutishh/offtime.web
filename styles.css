@@ -380,7 +380,7 @@ main {
 
   .site-footer {
     position: relative;
-    isolation: isolate;
+    isolation: auto;
     margin-top: clamp(2.5rem, 8vw, 4rem);
     padding: 0;
     font-size: 0.7rem;
@@ -389,7 +389,7 @@ main {
 
   .site-footer::before {
     position: absolute;
-    z-index: -1;
+    z-index: 3;
     top: -9rem;
     right: 0;
     bottom: 0;
@@ -413,6 +413,8 @@ main {
   }
 
   .footer-links {
+    position: relative;
+    z-index: 4;
     flex-wrap: wrap;
     gap: 0.75rem clamp(1rem, 5vw, 1.75rem);
     max-width: 25rem;
@@ -464,9 +466,13 @@ main {
     transform: translateX(-4%);
   }
 
+  .product--macmini {
+    isolation: auto;
+  }
+
   .mobile-about {
     position: relative;
-    z-index: 2;
+    z-index: 4;
     display: block;
     width: min(100%, 28rem);
     margin: clamp(-1rem, -2vw, -0.5rem) auto 0;
@@ -496,7 +502,11 @@ main {
   }
 
   .product--macbook .earning-rate {
-    transform: translateY(-1.25rem);
+    transform: translateY(-0.65rem);
+  }
+
+  .product--macmini .earning-rate {
+    transform: translateY(0.6rem);
   }
 
   .glow {
