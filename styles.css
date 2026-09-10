@@ -135,6 +135,19 @@ main {
   line-height: 1;
 }
 
+.site-footer .compute-link {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 1.5rem;
+  color: #171714;
+  font-size: 0.82rem;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25rem;
+}
+
 .footer-links {
   display: flex;
   justify-content: center;
@@ -339,11 +352,38 @@ main {
   }
 
   .site-footer {
-    position: static;
+    position: relative;
+    isolation: isolate;
     margin-top: clamp(2.5rem, 8vw, 4rem);
     padding: 0;
     font-size: 0.7rem;
     line-height: 1.35;
+  }
+
+  .site-footer::before {
+    position: absolute;
+    z-index: -1;
+    top: -5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(
+      to bottom,
+      rgb(247 244 236 / 0%) 0%,
+      rgb(247 244 236 / 38%) 45%,
+      rgb(247 244 236 / 88%) 100%
+    );
+    -webkit-backdrop-filter: blur(0.9rem);
+    backdrop-filter: blur(0.9rem);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 58%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 58%, black 100%);
+  }
+
+  .site-footer .compute-link {
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
   }
 
   .footer-links {
