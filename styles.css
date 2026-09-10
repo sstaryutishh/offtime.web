@@ -382,7 +382,7 @@ main {
     top: -9rem;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: calc(-1 * clamp(1.25rem, 5vw, 2.5rem));
     pointer-events: none;
     content: "";
     background: linear-gradient(
@@ -447,10 +447,10 @@ main {
   }
 
   .product--macmini img {
-    width: min(125vw, 42rem);
+    width: min(135vw, 46rem);
     max-width: none;
     margin-top: clamp(-2.2rem, -6vw, -1.5rem);
-    transform: none;
+    transform: translateX(-4%);
   }
 
   .earning-rate {
