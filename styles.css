@@ -239,6 +239,10 @@ main {
   transform: translate(-14%, 20%);
 }
 
+.mobile-about {
+  display: none;
+}
+
 .earning-rate {
   position: absolute;
   z-index: 4;
@@ -309,8 +313,14 @@ main {
 }
 
 @media (max-width: 900px) {
+  html,
   body {
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+  }
+
+  body {
     overflow-y: auto;
   }
 
@@ -318,6 +328,7 @@ main {
     min-height: 100svh;
     padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 2.5rem)
       max(1.5rem, env(safe-area-inset-bottom));
+    overflow-x: clip;
   }
 
   .logo {
@@ -449,8 +460,24 @@ main {
   .product--macmini img {
     width: min(135vw, 46rem);
     max-width: none;
-    margin-top: clamp(-2.2rem, -6vw, -1.5rem);
+    margin-top: clamp(-0.75rem, -2vw, -0.4rem);
     transform: translateX(-4%);
+  }
+
+  .mobile-about {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: min(100%, 28rem);
+    margin: clamp(-1rem, -2vw, -0.5rem) auto 0;
+    color: rgb(23 23 20 / 64%);
+    font-size: clamp(0.78rem, 2.4vw, 0.88rem);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .mobile-about span {
+    display: block;
   }
 
   .earning-rate {
@@ -466,6 +493,10 @@ main {
     bottom: auto;
     left: auto;
     transform: none;
+  }
+
+  .product--macbook .earning-rate {
+    transform: translateY(-1.25rem);
   }
 
   .glow {
